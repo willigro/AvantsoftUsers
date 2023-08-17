@@ -2,8 +2,6 @@ package com.avantsoft.common.track
 
 import android.util.Log
 
-// TODO move to common if I create it
-
 const val TAG = "WTracker"
 private const val UNKNOWN = "UNKNOWN"
 private const val PROJECT_PATH = "com.avantsoft"
