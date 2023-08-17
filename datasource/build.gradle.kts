@@ -1,7 +1,6 @@
-import Depends.Compose.implementCompose
 import Depends.Hilt.implementHilt
 import Depends.Core.implementCoreKtx
-import Depends.Module.implementAllModules
+import Depends.Retrofit.implementRetrofit
 import Depends.ViewModel.implementViewModel
 
 dependencies {
@@ -15,4 +14,7 @@ dependencies {
 
     // =========== ViewModel ==============
     implementViewModel()
+
+    // =========== Retrofit ==============
+    implementRetrofit()
 }
