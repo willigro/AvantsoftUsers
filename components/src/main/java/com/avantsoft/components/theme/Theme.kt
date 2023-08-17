@@ -1,4 +1,4 @@
-package com.avantsoft.ui.theme
+package com.avantsoft.components.theme
 
 import android.app.Activity
 import android.os.Build
