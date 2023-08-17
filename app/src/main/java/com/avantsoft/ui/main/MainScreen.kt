@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.avantsoft.common.navigation.UserNavigation
+import com.avantsoft.components.navigation.UserNavigation
 import com.avantsoft.components.theme.ListUsersAvantsoftTheme
 import com.avantsoft.ui.users.usersGraph
 

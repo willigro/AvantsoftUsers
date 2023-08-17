@@ -1,6 +1,5 @@
-package com.avantsoft.common.navigation
+package com.avantsoft.components.navigation
 
-// TODO move to components if I create it
 sealed class UserNavigation(val destination: String) {
 
     object Route: UserNavigation(destination = "user_route")
