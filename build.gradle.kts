@@ -85,12 +85,12 @@ fun Project.androidCompile() {
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_11
-            targetCompatibility = JavaVersion.VERSION_11
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
         }
 
         tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-            kotlinOptions.jvmTarget = "11"
+            kotlinOptions.jvmTarget = "17"
             kotlinOptions.freeCompilerArgs = listOf("-Xjvm-default=all")
         }
 
