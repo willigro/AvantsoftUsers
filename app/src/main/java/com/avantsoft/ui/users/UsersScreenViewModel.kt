@@ -3,7 +3,6 @@ package com.avantsoft.ui.users
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.avantsoft.datasource.repository.UserRepository
-import com.avantsoft.common.track.track
 import com.avantsoft.datasource.network.data.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -26,7 +25,7 @@ class UsersScreenViewModel @Inject constructor(
 
         // TODO add flow
         userRepository.fetchUsers()?.users?.also {
-            _uiState.value = UserUiState.Listing(users = it)
+            _uiState.value = UserUiState.Listing(users = it.chunked(10))
         } ?: {
             _uiState.value = UserUiState.NoUsers
         }
@@ -38,6 +37,6 @@ sealed class UserUiState {
     object Loading : UserUiState()
     object NoUsers : UserUiState()
     data class Listing(
-        val users: List<User>,
+        val users: List<List<User>>,
     ) : UserUiState()
 }

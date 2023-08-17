@@ -9,22 +9,34 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
+object AppTheme {
+    val dimensions: AppDimensions
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalDimensions.current
+}
+
+
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
-    tertiary = Pink80
+    tertiary = Pink80,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Blue50,
+    primary = Blue30,
     secondary = Green40,
-    tertiary = Pink40
+    tertiary = Grey80,
+    surfaceVariant = Color.White,
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -33,13 +45,13 @@ private val LightColorScheme = lightColorScheme(
     onSecondary = Color.White,
     onTertiary = Color.White,
     onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
     */
 )
 
 @Composable
 fun ListUsersAvantsoftTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
+    dimensions: AppDimensions = AppTheme.dimensions,
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
@@ -62,9 +74,13 @@ fun ListUsersAvantsoftTheme(
         }
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
+    CompositionLocalProvider(
+        LocalDimensions provides dimensions,
+    ) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = Typography,
+            content = content
+        )
+    }
 }
