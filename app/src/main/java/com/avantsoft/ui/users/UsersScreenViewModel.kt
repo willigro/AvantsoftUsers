@@ -1,9 +1,9 @@
-package com.avantsoft.users
+package com.avantsoft.ui.users
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.avantsoft.datasource.repository.UserRepository
-import com.avantsoft.track.track
+import com.avantsoft.common.track.track
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch

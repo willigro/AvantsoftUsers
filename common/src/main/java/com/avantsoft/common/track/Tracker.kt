@@ -1,4 +1,4 @@
-package com.avantsoft.track
+package com.avantsoft.common.track
 
 import android.util.Log
 
@@ -7,7 +7,7 @@ import android.util.Log
 const val TAG = "WTracker"
 private const val UNKNOWN = "UNKNOWN"
 private const val PROJECT_PATH = "com.avantsoft"
-private const val TRACKER_CLASS_PATH = "com.avantsoft.track.TrackerKt"
+private const val TRACKER_CLASS_PATH = "com.avantsoft.common.track.TrackerKt"
 const val MESSAGE_DIVISOR = ":::"
 
 object TrackerConfig {
